@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:http/http.dart' as http;
+import 'package:http/http.dart' as http; //importando biblioteca http pra conectar com o servidor
 
 class PokeAPI {
   static Future<http.Response> getPokemon() =>
