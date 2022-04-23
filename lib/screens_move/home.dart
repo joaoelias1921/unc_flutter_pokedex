@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/api/pokeapi.dart';
-import 'package:unc_flutter_pokedex/models/PokeModel.dart';
-import 'package:unc_flutter_pokedex/widgets/pokemon_grid.dart';
+import 'package:unc_flutter_pokedex/models/MoveModel.dart';
+import 'package:unc_flutter_pokedex/widgets_move/move_grid.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,24 +13,22 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Pokemon> pokemon = List.empty();
+  List<Move> move = List.empty();
 
   @override
   void initState() {
     super.initState();
-    getPokemonFromPokeApi();
+    getMoveFromPokeApi();
   }
 
-  void getPokemonFromPokeApi() async {
-    PokeAPI.getPokemon().then((response) {
+  void getMoveFromPokeApi() async {
+    PokeAPI.getMove().then((response) {
       List<Map<String, dynamic>> data =
           List.from(json.decode(response.body)['results']);
       setState(() {
-        pokemon = data.asMap().entries.map<Pokemon>((element) {
+        move = data.asMap().entries.map<Move>((element) {
           element.value['id'] = element.key + 1;
-          element.value['img'] =
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${element.key + 1}.png";
-          return Pokemon.fromJson(element.value);
+          return Move.fromJson(element.value);
         }).toList();
       });
     });
@@ -42,7 +40,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text("Pokedex"),
       ),
-      body: PokemonGrid(pokemon: pokemon),
+      body: MoveGrid(move: move),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Share',

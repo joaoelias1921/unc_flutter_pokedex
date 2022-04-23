@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:unc_flutter_pokedex/models/PokemonScreenData.dart';
-import 'package:unc_flutter_pokedex/widgets/pokemon_card_background.dart';
-import 'package:unc_flutter_pokedex/widgets/pokemon_card_data.dart';
+import 'package:unc_flutter_pokedex/models/MoveScreenData.dart';
+import 'package:unc_flutter_pokedex/widgets_move/move_card_background.dart';
+import 'package:unc_flutter_pokedex/widgets_move/move_card_data.dart';
 
-class PokemonCard extends StatelessWidget {
+class MoveCard extends StatelessWidget {
   final int id;
   final String name;
-  final String image;
 
-  const PokemonCard({   //construtor
+  const MoveCard({   //construtor
     Key? key,       //cada componente da tela tem um id proprio, que é o Key
     required this.id,
     required this.name,
-    required this.image,
   }): super(key: key);
 
   BoxDecoration getContainerDecoration() => BoxDecoration(  //define a decoração da caixa do card
@@ -33,10 +31,10 @@ class PokemonCard extends StatelessWidget {
         enableFeedback: true,
         splashColor: Colors.red[50],
         onTap: () => (
-          Navigator.pushNamed(    //Navigator: sair de uma tela e ir pra outra no Android, pushNamed: vá direto pra essa tela quando voltar
+          Navigator.pushNamed(    //Navigator: sair de uma tela e ir pra outra no Android, pushNamed: vá direto pra essa tela
             context,
-            "/details", //rota pra quando voltar ao app
-            arguments: PokemonScreenData(id, name, image),
+            "/details", //rota pra abrir ao apertar, detalhes do move
+            arguments: MoveScreenData(id, name), //definindo o que vai ser enviado pra tela de detalhes (/details)
           )
         ),
         child: Container(
@@ -44,8 +42,8 @@ class PokemonCard extends StatelessWidget {
           decoration: getContainerDecoration(),
           child: Stack(
             children: [
-              PokemonCardBackground(id: id),
-              PokemonCardData(name: name, image: image),
+              MoveCardBackground(id: id),
+              MoveCardData(name: name),
             ],
           ),
         ),       

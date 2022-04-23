@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/models/PokeModel.dart';
-import 'package:unc_flutter_pokedex/widgets/pokemon_card.dart';
+import 'package:unc_flutter_pokedex/widgets_pokemon/pokemon_card.dart';
 
 class PokemonGrid extends StatefulWidget {
   // criando a listagem que irá receber os Pokemon!

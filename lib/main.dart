@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unc_flutter_pokedex/screens/home.dart';
+import 'package:unc_flutter_pokedex/screens_ability/details.dart';
+import 'package:unc_flutter_pokedex/screens_ability/home.dart';
 
 void main () {
   // chamando o app para execução
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Pokédex',
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -21,7 +23,7 @@ class App extends StatelessWidget {
       routes: {
         "/": (context) => const Home(),
         // Já criando a rota para exibir os detalher do pokémon
-        // "/details" : (context) => const Details(),
+        "/details" : (context) => const Details(),
       },
     );
   }

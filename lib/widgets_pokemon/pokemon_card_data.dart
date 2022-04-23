@@ -11,7 +11,7 @@ class PokemonCardData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(    //coluna, que vai ter o nome e a imagem do pokemon
+    return Column(    //coluna, que vai ter o nome e a imagem do pokemon, é coluna pois a imagem fica em cima do nome
       children: [
         Expanded(   //faz com que a imagem seja dinamica, se expanda conforme a tela
           child: Padding(
