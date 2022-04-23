@@ -18,13 +18,21 @@ class DetailData extends StatelessWidget {
             color: Colors.grey,
           ),
         ),
-        borderRadius: BorderRadius.only( //borderradius.only = apenas uma ou duas bordas especificas serao arredondadas
-          topLeft: Radius.circular(71),
-          bottomRight: Radius.circular(71),
-        ),
       ),
       child: Column(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Center(
+            child: Text("teste",
+              style: TextStyle(
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87
+              ),
+              textAlign: TextAlign.center,
+            ),            
+          ),
+        ],
       ),
     );
   }

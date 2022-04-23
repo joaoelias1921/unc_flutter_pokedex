@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unc_flutter_pokedex/screens_ability/details.dart';
-import 'package:unc_flutter_pokedex/screens_ability/home.dart';
+import 'package:unc_flutter_pokedex/screens_type/details.dart';
+import 'package:unc_flutter_pokedex/screens_type/home.dart';
 
 void main () {
   // chamando o app para execução

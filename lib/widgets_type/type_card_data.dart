@@ -11,10 +11,15 @@ class TypeCardData extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(    //coluna, que vai ter o nome do Type
       children: [
-        const Divider(),
+        const Divider(
+          height: 15,
+          color: Colors.red,
+          thickness: 3,          
+        ),
           Text("${name[0].toUpperCase()}${name.substring(1)}",
             style: const TextStyle(
               fontSize: 21,
+              fontWeight: FontWeight.bold,
               color: Colors.black87
             ),
           ),

@@ -11,13 +11,18 @@ class MoveCardData extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(    //coluna, que vai ter o nome do Move
       children: [
-        const Divider(),
-          Text("${name[0].toUpperCase()}${name.substring(1)}",
-            style: const TextStyle(
-              fontSize: 21,
-              color: Colors.black87
-            ),
+        const Divider(
+          height: 15,
+          color: Colors.red,
+          thickness: 3,          
+        ),
+        Text("${name[0].toUpperCase()}${name.substring(1)}",
+          style: const TextStyle(
+            fontSize: 21,
+            fontWeight: FontWeight.bold,
+            color: Colors.black87
           ),
+        ),
       ],
     );
   }

@@ -14,7 +14,7 @@ class AbilityCardBackground extends StatelessWidget {
       style: TextStyle(
         fontSize: 101,
         fontWeight: FontWeight.bold,
-        color: Colors.grey[200]
+        color: Colors.red[200]
       ),
     );
   }

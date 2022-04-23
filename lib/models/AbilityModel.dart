@@ -1,6 +1,7 @@
 class Ability {
   int id;
   String name;
+  
 
   Ability.fromJson(Map<String, dynamic> data)
     : id = data['id'],

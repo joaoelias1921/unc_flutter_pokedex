@@ -21,9 +21,12 @@ class Details extends StatelessWidget {
           children: [
             DetailTitle(
               id: arguments.id,
-              name: arguments.name,
+              name: arguments.name
             ),
-            DetailData(),
+            DetailData(
+              id: arguments.id,
+              name: arguments.name
+            ),
           ],
         ),
       ),

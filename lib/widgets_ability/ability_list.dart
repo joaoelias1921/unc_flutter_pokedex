@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/models/AbilityModel.dart';
 import 'package:unc_flutter_pokedex/widgets_ability/ability_card.dart';
 
-class AbilityGrid extends StatefulWidget {
+class AbilityList extends StatefulWidget {
   // criando a listagem que irá receber as habilidades!
   final List<Ability> ability;
-  const AbilityGrid({
+  const AbilityList({
     Key? key,
     required this.ability
   }) : super(key: key);
 
   @override
-  State<AbilityGrid> createState() => _AbilityGridState();
+  State<AbilityList> createState() => _AbilityListState();
 }
 
-class _AbilityGridState extends State<AbilityGrid> {
+class _AbilityListState extends State<AbilityList> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    //if ternário, dependendo do tamanho da tela, determina o numero de colunas da grid
+    //if ternário, dependendo do tamanho da tela, determina o numero de colunas da lista
     final crossAxisCount = 
       (width > 1000)
         ? 5
@@ -28,13 +28,9 @@ class _AbilityGridState extends State<AbilityGrid> {
             ? 3
             : 2;
 
-    return GridView.count(
+    return ListView(
       padding: const EdgeInsets.all(7),
-      crossAxisCount: crossAxisCount,
-      crossAxisSpacing: 4,
-      mainAxisSpacing: 4,
       semanticChildCount: 250,
-      childAspectRatio: 200 / 244,
       physics: const BouncingScrollPhysics(),
       children: widget.ability
         .map(

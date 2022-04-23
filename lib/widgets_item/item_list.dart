@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/models/ItemModel.dart';
 import 'package:unc_flutter_pokedex/widgets_item/item_card.dart';
 
-class ItemGrid extends StatefulWidget {
+class ItemList extends StatefulWidget {
   // criando a listagem que irá receber os Pokemon!
   final List<Item> item;
-  const ItemGrid({ 
+  const ItemList({ 
     Key? key,
     required this.item
     }) : super(key: key);
 
   @override
-  State<ItemGrid> createState() => _ItemGridState();
+  State<ItemList> createState() => _ItemListState();
 }
 
-class _ItemGridState extends State<ItemGrid> {  //QUANDO TIVER "QLQR COISA" extends State<"QLQR COISA">, ESTAMOS INICIANDO O FRONTEND
+class _ItemListState extends State<ItemList> {  //QUANDO TIVER "QLQR COISA" extends State<"QLQR COISA">, ESTAMOS INICIANDO O FRONTEND
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;  //descobre a largura(width) da tela do dispositivo
@@ -28,13 +28,9 @@ class _ItemGridState extends State<ItemGrid> {  //QUANDO TIVER "QLQR COISA" exte
             ? 3
             : 2;
 
-    return GridView.count(    //gridview permite a visualização em grade na tela!
+    return ListView(    //gridview permite a visualização em grade na tela!
       padding: const EdgeInsets.all(7),   //Insets: marcação a partir da borda
-      crossAxisCount: crossAxisCount,   //qtd de colunas
-      crossAxisSpacing: 4,    // controla o scroll em linhas da tela
-      mainAxisSpacing: 4,     // também relacionado com o scroll
       semanticChildCount: 250,    //como foi chamado 250 no pokeapi, 250 aqui
-      childAspectRatio: 200 / 244,    // proporção pro tamanho do card
       physics: const BouncingScrollPhysics(),   //físicas no scroll da página
       children: widget.item  //igual ao child, mas é mais de 1 child
         .map(

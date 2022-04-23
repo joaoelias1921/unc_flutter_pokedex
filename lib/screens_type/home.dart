@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/api/pokeapi.dart';
 import 'package:unc_flutter_pokedex/models/TypeModel.dart';
-import 'package:unc_flutter_pokedex/widgets_type/type_grid.dart';
+import 'package:unc_flutter_pokedex/widgets_type/type_list.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text("Pokedex"),
       ),
-      body: TypeGrid(type: type),
+      body: TypeList(type: type),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Share',
