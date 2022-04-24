@@ -1,3 +1,4 @@
+//classe Pokemon, com os respectivos atributos para a tela e o construtor de classe
 class PokemonScreenData {
   final int id;
   final String name;

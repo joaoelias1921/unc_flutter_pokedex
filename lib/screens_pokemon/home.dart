@@ -1,3 +1,4 @@
+//importações necessárias
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -5,6 +6,8 @@ import 'package:unc_flutter_pokedex/api/pokeapi.dart';
 import 'package:unc_flutter_pokedex/models/PokeModel.dart';
 import 'package:unc_flutter_pokedex/widgets_pokemon/pokemon_grid.dart';
 
+//classe Home que gera um widget do tipo Stateful, ou seja,
+//que sofrerá alterações durante sua execução
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -12,6 +15,7 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
+//classe responsável por inicializar a tela e chamar os métodos
 class _HomeState extends State<Home> {
   List<Pokemon> pokemon = List.empty();
 
@@ -21,6 +25,8 @@ class _HomeState extends State<Home> {
     getPokemonFromPokeApi();
   }
 
+  //função responsável por mapear o JSON vindo da API e retornar 
+  //cada Pokemon com os dados necessários para exibição, em formato List
   void getPokemonFromPokeApi() async {
     PokeAPI.getPokemon().then((response) {
       List<Map<String, dynamic>> data =
@@ -36,8 +42,10 @@ class _HomeState extends State<Home> {
     });
   }
 
+  //construindo um componente (widget) no contexto de exibição
+  //por estar retornando um Scaffold, trata-se de uma tela que será mostrada ao usuário
   @override
-  Widget build(BuildContext context) {  //construindo um componente
+  Widget build(BuildContext context) {  
     return Scaffold(
       appBar: AppBar(
         title: const Text("Pokedex"),

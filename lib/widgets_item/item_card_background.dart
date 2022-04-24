@@ -1,5 +1,8 @@
+//importações necessárias
 import 'package:flutter/material.dart';
 
+//classe ItemCardBackground, que inicializa o background do Card, sendo um widget do 
+//tipo Stateless, ou seja, que não sofrerá alterações durante a execução
 class ItemCardBackground extends StatelessWidget {
   final int id;
   const ItemCardBackground({
@@ -7,6 +10,7 @@ class ItemCardBackground extends StatelessWidget {
     required this.id
     }) : super(key: key);
 
+  //widget que retorna os dados e como serão exibidos no background do Card, dentro do contexto
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -14,8 +18,7 @@ class ItemCardBackground extends StatelessWidget {
       style: TextStyle(
         fontSize: 101,
         fontWeight: FontWeight.bold,
-        color: Colors.red[200],
-
+        color: Colors.red[200]
       ),
     );
   }

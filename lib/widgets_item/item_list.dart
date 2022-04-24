@@ -1,9 +1,12 @@
+//importações necessárias
 import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/models/ItemModel.dart';
 import 'package:unc_flutter_pokedex/widgets_item/item_card.dart';
 
+//classe ItemList, que inicializa a Lista onde serão exibidos os Itens, sendo um widget do 
+//tipo Stateless, ou seja, que não sofrerá alterações durante a execução
 class ItemList extends StatefulWidget {
-  // criando a listagem que irá receber os Pokemon!
+  // criando a listagem que irá receber os itens
   final List<Item> item;
   const ItemList({ 
     Key? key,
@@ -14,27 +17,18 @@ class ItemList extends StatefulWidget {
   State<ItemList> createState() => _ItemListState();
 }
 
-class _ItemListState extends State<ItemList> {  //QUANDO TIVER "QLQR COISA" extends State<"QLQR COISA">, ESTAMOS INICIANDO O FRONTEND
+//iniciando o front-end
+class _ItemListState extends State<ItemList> {
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;  //descobre a largura(width) da tela do dispositivo
-    //if ternário, dependendo do tamanho da tela, determina o numero de colunas da grid
-    final crossAxisCount = 
-      (width > 1000)
-        ? 5
-        : (width > 700)
-          ? 4
-          : (width > 450)
-            ? 3
-            : 2;
-
-    return ListView(    //gridview permite a visualização em grade na tela!
-      padding: const EdgeInsets.all(7),   //Insets: marcação a partir da borda
-      semanticChildCount: 250,    //como foi chamado 250 no pokeapi, 250 aqui
-      physics: const BouncingScrollPhysics(),   //físicas no scroll da página
-      children: widget.item  //igual ao child, mas é mais de 1 child
+    //ListView permite a visualização em lista na tela
+    return ListView(
+      padding: const EdgeInsets.all(7),         //EdgeInsets: marcação a partir da borda
+      physics: const BouncingScrollPhysics(),   //physics: propriedades visuais de física aplicada no scroll da página
+      children: widget.item                     //children: quando se tem 2 ou mais filhos ou "child"
         .map(
-          (item) => ItemCard(   //pra cada item da listagem, vou gerar um ItemCard
+          //para cada Item da listagem, será gerado um ItemCard
+          (item) => ItemCard(   
             id: item.id,
             name: item.name,
           ),

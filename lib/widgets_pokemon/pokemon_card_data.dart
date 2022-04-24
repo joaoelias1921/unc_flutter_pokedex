@@ -1,5 +1,8 @@
+//importações necessárias
 import 'package:flutter/material.dart';
 
+//classe PokemonCardData, que inicializa os dados do Card, sendo um widget do 
+//tipo Stateless, ou seja, que não sofrerá alterações durante a execução
 class PokemonCardData extends StatelessWidget {
   final String name;
   final String image;
@@ -9,20 +12,26 @@ class PokemonCardData extends StatelessWidget {
     required this.image 
     }) : super(key: key);
 
+  //widget que retorna os dados do Card, dentro do contexto
   @override
   Widget build(BuildContext context) {
-    return Column(    //coluna, que vai ter o nome e a imagem do pokemon, é coluna pois a imagem fica em cima do nome
+    //coluna, que retornará o nome e a imagem do Pokemon
+    //o tipo Column faz com que os elementos apareçam em ordem, de cima para baixo
+    return Column(
       children: [
-        Expanded(   //faz com que a imagem seja dinamica, se expanda conforme a tela
+        //Expanded faz com que a imagem seja dinâmica, ou seja, se expanda conforme a tela do dispositivo
+        Expanded(
           child: Padding(
             padding: const EdgeInsets.all(11),
-            child: Image.network(   //image.network = pq a imagem vai vir do pokeAPI, ou seja, da web
+            //image.network = a imagem vem da web (network), ou seja, da PokeAPI
+            child: Image.network(   
               image,
               fit: BoxFit.contain,
               alignment: Alignment.bottomRight,
             ),
           ),
         ),
+        //Divider = linha divisória inserida entre os elementos
         const Divider(),
           Text("${name[0].toUpperCase()}${name.substring(1)}",
             style: const TextStyle(

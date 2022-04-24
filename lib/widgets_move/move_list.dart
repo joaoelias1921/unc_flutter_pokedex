@@ -1,9 +1,12 @@
+//importações necessárias
 import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/models/MoveModel.dart';
 import 'package:unc_flutter_pokedex/widgets_move/move_card.dart';
 
+//classe MoveList, que inicializa a Lista onde serão exibidos os Moves, sendo um widget do 
+//tipo Stateless, ou seja, que não sofrerá alterações durante a execução
 class MoveList extends StatefulWidget {
-  // criando a listagem que irá receber os Pokemon!
+  // criando a listagem que irá receber os Moves
   final List<Move> move;
   const MoveList({ 
     Key? key,
@@ -14,27 +17,18 @@ class MoveList extends StatefulWidget {
   State<MoveList> createState() => _MoveListState();
 }
 
-class _MoveListState extends State<MoveList> {  //QUANDO TIVER "QLQR COISA" extends State<"QLQR COISA">, ESTAMOS INICIANDO O FRONTEND
+//iniciando o front-end
+class _MoveListState extends State<MoveList> {
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;  //descobre a largura(width) da tela do dispositivo
-    //if ternário, dependendo do tamanho da tela, determina o numero de colunas da grid
-    final crossAxisCount = 
-      (width > 1000)
-        ? 5
-        : (width > 700)
-          ? 4
-          : (width > 450)
-            ? 3
-            : 2;
-
-    return ListView(    //gridview permite a visualização em grade na tela!
-      padding: const EdgeInsets.all(7),   //Insets: marcação a partir da borda
-      semanticChildCount: 250,    //como foi chamado 250 no pokeapi, 250 aqui
-      physics: const BouncingScrollPhysics(),   //físicas no scroll da página
-      children: widget.move  //igual ao child, mas é mais de 1 child
+    //ListView permite a visualização em lista na tela
+    return ListView(
+      padding: const EdgeInsets.all(7),         //EdgeInsets: marcação a partir da borda
+      physics: const BouncingScrollPhysics(),   //physics: propriedades visuais de física aplicada no scroll da página
+      children: widget.move                     //children: quando se tem 2 ou mais filhos ou "child"
         .map(
-          (move) => MoveCard(   //pra cada move da listagem, vou gerar um MoveCard
+          //para cada Move da listagem, será gerado um MoveCard
+          (move) => MoveCard(
             id: move.id,
             name: move.name,
           ),

@@ -1,5 +1,8 @@
+//importações necessárias
 import 'package:flutter/material.dart';
 
+//classe DetailImage, que inicializa a imagem a ser exibida na tela Details, sendo um widget do 
+//tipo Stateless, ou seja, que não sofrerá alterações durante a execução
 class DetailImage extends StatelessWidget {
   final String image;
   const DetailImage({ 
@@ -7,10 +10,12 @@ class DetailImage extends StatelessWidget {
     required this.image 
     }) : super(key: key);
 
+  //widget que retorna a imagem e como será exibida na tela Details, dentro do contexto
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints( //constraints: restrições ao widget
+      //constraints: restrições ao widget
+      constraints: const BoxConstraints(
         maxHeight: 500
       ),
       color: Colors.black,

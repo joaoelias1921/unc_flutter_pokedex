@@ -1,3 +1,4 @@
+//classe Ability, com os atributos que serão usados e os dados do JSON
 class Ability {
   int id;
   String name;

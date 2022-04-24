@@ -1,3 +1,4 @@
+//classe Pokemon, com os atributos que serão usados e os dados do JSON
 class Pokemon {
   int id;
   String name;

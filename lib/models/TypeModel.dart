@@ -1,3 +1,4 @@
+//classe Type, com os atributos que serão usados e os dados do JSON
 class Type {
   int id;
   String name;

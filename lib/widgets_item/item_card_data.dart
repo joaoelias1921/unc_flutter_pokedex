@@ -1,5 +1,8 @@
+//importações necessárias
 import 'package:flutter/material.dart';
 
+//classe ItemCardData, que inicializa os dados do Card, sendo um widget do 
+//tipo Stateless, ou seja, que não sofrerá alterações durante a execução
 class ItemCardData extends StatelessWidget {
   final String name;
   const ItemCardData({ 
@@ -7,10 +10,14 @@ class ItemCardData extends StatelessWidget {
     required this.name,
     }) : super(key: key);
 
+  //widget que retorna os dados do Card, dentro do contexto
   @override
   Widget build(BuildContext context) {
-    return Column(    //coluna, que vai ter o nome do Item
+    //coluna, que retornará o nome do Item
+    //o tipo Column faz com que os elementos apareçam em ordem, de cima para baixo
+    return Column(
       children: [
+        //Divider = linha divisória inserida entre os elementos
         const Divider(
           height: 15,
           color: Colors.red,

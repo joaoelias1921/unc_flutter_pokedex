@@ -1,3 +1,4 @@
+//classe Item, com os atributos que serão usados e os dados do JSON
 class Item {
   int id;
   String name;

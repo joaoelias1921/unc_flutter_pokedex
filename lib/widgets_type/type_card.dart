@@ -1,19 +1,25 @@
+//importações necessárias
 import 'package:flutter/material.dart';
 import 'package:unc_flutter_pokedex/models/TypeScreenData.dart';
 import 'package:unc_flutter_pokedex/widgets_type/type_card_background.dart';
 import 'package:unc_flutter_pokedex/widgets_type/type_card_data.dart';
 
+//classe TypeCard, que inicializa o Card, sendo um widget do 
+//tipo Stateless, ou seja, que não sofrerá alterações durante a execução
 class TypeCard extends StatelessWidget {
   final int id;
   final String name;
 
-  const TypeCard({   //construtor
-    Key? key,       //cada componente da tela tem um id proprio, que é o Key
+  //construtor
+  //cada componente da tela tem um id próprio, que é o Key
+  const TypeCard({
+    Key? key,
     required this.id,
     required this.name,
   }): super(key: key);
 
-  BoxDecoration getContainerDecoration() => BoxDecoration(  //define a decoração da caixa do card
+  //função que irá definir a decoração visual do Card
+  BoxDecoration getContainerDecoration() => BoxDecoration(
     borderRadius: BorderRadius.circular(24),
     border: Border.all(
       color: Colors.grey.withOpacity(0.24),
@@ -21,6 +27,7 @@ class TypeCard extends StatelessWidget {
     ),
   );
 
+  //widget que retorna o Card própriamente dito, dentro do contexto
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -31,12 +38,17 @@ class TypeCard extends StatelessWidget {
         enableFeedback: true,
         splashColor: Colors.red[50],
         onTap: () => (
-          Navigator.pushNamed(    //Navigator: sair de uma tela e ir pra outra no Android, pushNamed: vá direto pra essa tela
+          //Navigator: navegação entre telas no Android 
+          //pushNamed: "vá direto" para a tela informada, sempre levando o contexto em consideração
+          Navigator.pushNamed(
             context,
-            "/details", //rota pra abrir ao apertar, detalhes do type
-            arguments: TypeScreenData(id, name), //definindo o que vai ser enviado pra tela de detalhes (/details)
+            //rota para abrir a tela "details" ao apertar no Card (onTap)
+            "/details",
+            //definindo o que vai ser enviado para a tela de detalhes (/details)
+            arguments: TypeScreenData(id, name),
           )
         ),
+        //o que será exibido no Card, utilizando a função definida anteriormente para decoração
         child: Container(
           padding: const EdgeInsets.all(7),
           decoration: getContainerDecoration(),

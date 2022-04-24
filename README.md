@@ -1,16 +1,32 @@
 # unc_flutter_pokedex
 
-A new Flutter project.
+Um projeto Flutter sobre Pokémon!
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Primeiros Passos
 
-A few resources to get you started if this is your first Flutter project:
+Este é um projeto inicial com Flutter, utilizando a API PokeAPI!
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Enquanto o projeto encontra-se nas fases iniciais, é preciso seguir os seguintes passos para visualizar as diferentes telas e dados disponíveis:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Acesse o arquivo main.dart, localizado em unc_flutter_pokedex\lib\main.dart;
+- Nas linhas 3 e 4, altere "screens_pokemon" para um dos seguintes:
+    - "screens_type";
+    - "screens_ability";
+    - "screens_move";
+    - "screens_item";
+    - "screens_pokemon" também retorna informações!;
+
+Pronto! Agora é só rodar o projeto a partir da Depuração, no seu celular, navegador ou SO.
+
+
+## Documentação Flutter
+
+Algumas informações e recursos importantes do Flutter e da API utilizada:
+
+- [Lab: Construa seu primeiro app em Flutter](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Exemplos úteis do Flutter](https://flutter.dev/docs/cookbook)
+
+Para ajuda com os primeiros passos no Flutter, veja a
+[documentação online](https://flutter.dev/docs), que oferece tutoriais,
+exemplos, auxílio no desenvolvimento mobile, e uma referência completa à uma API.

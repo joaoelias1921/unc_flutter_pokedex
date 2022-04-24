@@ -1,5 +1,7 @@
+//importações necessárias
 import 'dart:async';
-import 'package:http/http.dart' as http; //importando biblioteca http pra conectar com o servidor
+//importando biblioteca http pra conectar com o servidor
+import 'package:http/http.dart' as http; 
 
 //funções para retornar os dados requisitados da API na web
 class PokeAPI {

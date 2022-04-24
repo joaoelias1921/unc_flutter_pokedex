@@ -1,3 +1,4 @@
+//classe Move, com os atributos que serão usados e os dados do JSON
 class Move {
   int id;
   String name;
