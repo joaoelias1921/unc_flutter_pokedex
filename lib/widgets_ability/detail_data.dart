@@ -17,7 +17,7 @@ class DetailData extends StatelessWidget {
         minHeight: 500,
       ),
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Color.fromARGB(255, 253, 208, 208),
         border: Border(
           top: BorderSide(
             width: 2,
@@ -29,7 +29,7 @@ class DetailData extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
           Center(
-            child: Text("teste",
+            child: Text("Detalhes!",
               style: TextStyle(
                 fontSize: 21,
                 fontWeight: FontWeight.bold,
